@@ -1,0 +1,8 @@
+{
+    "execMap": {
+        "php": "php"
+    },
+    "ext": "php, ini",
+    "ignore": ["node_modules", ".gitignore"],
+    "verbose": true
+}
