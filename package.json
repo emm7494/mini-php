@@ -15,5 +15,13 @@
   "devDependencies": {
     "nodemon": "^2.0.1"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emm7494/mini-php.git"
+  },
+  "bugs": {
+    "url": "https://github.com/emm7494/mini-php/issues"
+  },
+  "homepage": "https://github.com/emm7494/mini-php#readme"
 }
