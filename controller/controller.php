@@ -15,20 +15,25 @@ function render_home()
         "csl-1.jpeg",
         "csl-3.jpeg",
     ];
-    require '../pages/home.php';
+    require_once '../pages/home.php';
 }
 
 function render_about()
 {
-    require '../pages/about.php';
+    require_once '../pages/about.php';
 }
 
 function render_contact()
 {
-    require '../pages/contact.php';
+    require_once '../pages/contact.php';
 }
 
 function render_404()
 {
-    require '../pages/404.php';
+    require_once '../pages/404.php';
+}
+
+function get_cart_json()
+{
+    require_once '../api/get_cart_json.php';
 }

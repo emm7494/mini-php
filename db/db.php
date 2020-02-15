@@ -17,20 +17,20 @@ class Database
     function connect()
     {
         try {
-            $conn = new PDO("{$this->dbengine}:host={$this->dbhost};dbname={$this->dbname}", $this->username, $this->password);
+            $this->conn = new PDO("{$this->dbengine}:host={$this->dbhost};dbname={$this->dbname}", $this->username, $this->password);
             // set the PDO error mode to exception
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return $conn;
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $this->conn;
         } catch (PDOException $e) {
             echo "Connection failed: " . $e->getMessage();
         }
     }
     function __destruct()
     {
-    }
-    function __get($property)
-    {
-        if (property_exists($this, $property)) {
+        try {
+            $this->conn = null;
+        } catch (PDOException $e) {
+            echo "Disconnection failed: " . $e->getMessage();
         }
     }
 }

@@ -1,3 +1,4 @@
+<?php global $conn; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,71 +14,7 @@
 </head>
 
 <body>
-    <!-- Modal -->
-    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Your Shopping Cart</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <table id="cartTable" class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Product</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Quantity</th>
-                                <th scope="col">Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php $sql = "SELECT * FROM `contact` WHERE 1";
-                            $result = $conn->query($sql);
-                            ?>
-                            <?php while ($record_fields = $result->fetch(PDO::FETCH_ASSOC)) : ?>
-                                <tr>
-                                    <?php foreach ($record_fields as $field_name => $record_field) : ?>
-                                        <?php if ($field_name == 'iD') : ?>
-                                            <th scope="row">
-                                                <?php print($record_field); ?>
-                                            </th>
-                                        <?php endif ?>
-                                        <?php if ($field_name != 'iD') : ?>
-                                            <td>
-                                                <?php print($record_field); ?>
-                                            </td>
-                                        <?php endif ?>
-                                    <?php endforeach ?>
-                                    <td>
-                                        <button class="btn btn-danger" type="button" onclick="deleteRow(this)"><i class="fas fa-trash-alt"></i></button>
-
-                                    </td>
-                                </tr>
-
-                                <script>
-                                    function deleteRow(x) {
-                                        const cartTable = document.querySelector('#cartTable');
-                                        console.log(x.parentNode.parentNode.rowIndex);
-                                        cartTable.deleteRow(x.parentNode.parentNode.rowIndex);
-                                    }
-                                </script>
-
-                            <?php endwhile ?>
-
-                        </tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Checkout</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php require_once '../templates/cart_modal.php' ?>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light py-2">
             <!--Container start-->
