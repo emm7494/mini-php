@@ -24,12 +24,19 @@ function injectTableData(data) {
       <td>${entry.fName}</td>
       <td>${entry.lName}</td>
       <td>${entry.eMail}</td>
-      <td>&nbsp;</td>
+      <td><button class="btn btn-danger btnDelTableRow" onclick="delTableRow(this)"><i class="fas fa-trash-alt"></i></button></td>
     </tr>`;
   }
   document.querySelector("#cartTableBody").innerHTML = tableData;
 }
 
-getCartJSON("/api/cart")
-  .then(injectTableData)
-  .catch((err) => console.log(err));
+function delTableRow(delBtn) {
+  const tableRow = delBtn.closest("tr");
+  delBtn.closest("table").deleteRow(tableRow.rowIndex);
+}
+
+function loadCart() {
+  getCartJSON("/api/cart")
+    .then(injectTableData)
+    .catch((err) => console.log(err));
+}

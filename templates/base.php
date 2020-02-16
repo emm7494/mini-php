@@ -67,8 +67,7 @@
                 </div>
                 <!--Collapsible Menu end-->
                 <section class="order-1 order-lg-3">
-                    <i class="fas fa-heart ml-3"></i>
-                    <i class="fas fa-shopping-cart ml-1" data-toggle="modal" data-target="#cartModal"></i>
+                    <i onclick="loadCart()" class="navbar-icon fas fa-shopping-cart ml-1" data-toggle="modal" data-target="#cartModal"></i>
                 </section>
             </div>
             <!--Container end-->
