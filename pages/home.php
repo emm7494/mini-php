@@ -6,16 +6,15 @@
 <?php ob_start(); ?>
 <section>
   <div class="container-lg">
-    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleCaptions" class="carousel slide mb-5" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
         <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner">
-
         <div class="carousel-item active">
-          <img src="/static/img/csl-1.jpeg" class="d-block w-100 zh-100" alt="..." style="height: 30rem">
+          <img src="/static/img/csl-1.jpeg" class="d-block w-100 zh-100" alt="..." style="height: 35rem">
           <div class="carousel-caption d-none d-md-block">
             <h5>First slide label</h5>
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -23,7 +22,7 @@
         </div>
 
         <div class="carousel-item">
-          <img src="/static/img/csl-2.jpeg" class="d-block w-100 zh-100" alt="..." style="height: 30rem">
+          <img src="/static/img/csl-2.jpeg" class="d-block w-100 zh-100" alt="..." style="height: 35rem">
           <div class="carousel-caption d-none d-md-block">
             <h5>Second slide label</h5>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -31,7 +30,7 @@
         </div>
 
         <div class="carousel-item">
-          <img src="/static/img/csl-3.jpeg" class="d-block w-100 zh-100" alt="..." style="height: 30rem">
+          <img src="/static/img/csl-3.jpeg" class="d-block w-100 zh-100" alt="..." style="height: 35rem">
           <div class="carousel-caption d-none d-md-block">
             <h5>Third slide label</h5>
             <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -62,10 +61,10 @@
 </style>
 <main class="">
   <div class="container-lg">
-    <div class="px-2 py-2 pt-md-4 pb-md-3 mx-auto text-center">
-      <h1 class="display-4">Phones, Laptops, TVs'...</h1>
+    <div class="px-2 py-2 pt-md-4 pb-md-3 mx-auto text-center mb-5">
+      <h1 class="display-4 text-secondary">Phones, Laptops, TVs'...</h1>
       <p class="lead">
-        Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos sapiente consectetur, voluptatum cupiditate, itaque modi atque nam magnam obcaecati porro ratione laborum rerum laudantium aspernatur voluptas, fugiat nostrum. Vel, illum?
       </p>
     </div>
   </div>
@@ -74,39 +73,51 @@
   ?>
   <div class="container-lg">
     <div class="row">
-      <?php foreach ($card_imgs as $card_img) : ?>
+      <?php $sql = "SELECT * FROM `products` WHERE 1";
+      $result = $conn->query($sql);
+      ?>
+      <?php while ($record_fields = $result->fetch(PDO::FETCH_ASSOC)) : ?>
         <div class="col mb-5">
           <div class="card border-0 mx-auto">
-            <img width="200px" height="200px" src="/static/img/<?= $card_img ?>" class="card-img-top" alt="...">
+            <img width="200px" height="200px" src="/static/img/<?php echo $record_fields['image'] ?>" class="card-img-top" alt="...">
             <div class="card-body">
               <h6 class="card-text text-muted">
-                Laptop
+                <?php echo $record_fields['category'] ?>
               </h6>
               <h4 class="card-text">
-                Razer Blade 15 Studio Edition
+                <?php echo $record_fields['name'] ?>
               </h4>
               <small class=" card-text text-muted">
-                #Gaming#Studio
+                <?php echo $record_fields['tags'] ?>
               </small>
+              <div class="mt-3 d-flex justify-content-between">
+                <span class="">GHS <?php echo $record_fields['price'] ?></span>
+                <i class="icon--sm text-muted fas fa-cart-plus"></i>
+              </div>
             </div>
           </div>
         </div>
-      <?php endforeach ?>
+      <?php endwhile ?>
     </div>
   </div>
   <!--card end-->
 </main>
 
+<?php $sql = "SELECT * FROM `products` WHERE 1";
+$result = $conn->query($sql);
+?>
 <ul>
-  <?php $sql = "SELECT * FROM `contact` WHERE 1";
-  $result = $conn->query($sql);
-  ?>
   <?php while ($record_fields = $result->fetch(PDO::FETCH_ASSOC)) : ?>
     <li>
-      <?php foreach ($record_fields as $record_field) : ?>
-        <?php print($record_field); ?>123
-      <?php endforeach ?>
-    </li>abc
+      <?php echo $record_fields['id'] ?>
+      <?php echo $record_fields['name'] ?>
+      <?php echo $record_fields['category'] ?>
+      <?php echo $record_fields['quantity'] ?>
+      <?php echo $record_fields['price'] ?>
+      <?php echo $record_fields['created'] ?>
+      <?php echo $record_fields['image'] ?>
+      <?php echo $record_fields['modified'] ?>
+    </li>-|-
   <?php endwhile ?>
 </ul>
 <?php

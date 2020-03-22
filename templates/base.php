@@ -11,6 +11,17 @@
     <link href="/static/css/carousel.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/style.css">
     <title><?= $data['title'] ?></title>
+    <style>
+        #__bs_notify__ {
+            /* Move notification to bottom */
+            top: auto !important;
+            bottom: 0 !important;
+            border-top-left-radius: 0.31rem !important;
+            border-bottom-left-radius: 0 !important;
+            font-size: 0.8rem !important; 
+            opacity: 0.7;
+        }
+    </style>
 </head>
 
 <body>
@@ -67,7 +78,7 @@
                 </div>
                 <!--Collapsible Menu end-->
                 <section class="order-1 order-lg-3">
-                    <i onclick="loadCart()" class="navbar-icon fas fa-shopping-cart ml-1" data-toggle="modal" data-target="#cartModal"></i>
+                    <i onclick="loadCart()" class="navbar-icon fas fa-shopping-cart ml-1 text-secondary" data-toggle="modal" data-target="#cartModal"></i>
                 </section>
             </div>
             <!--Container end-->

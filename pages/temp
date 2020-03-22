@@ -1,0 +1,30 @@
+  <!--card start-->
+  <?php
+  ?>
+  <div class="container-lg">
+    <div class="row">
+      <?php foreach ($card_imgs as $card_img) : ?>
+        <div class="col mb-5">
+          <div class="card border-0 mx-auto">
+            <img width="200px" height="200px" src="/static/img/<?= $card_img ?>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h6 class="card-text text-muted">
+                Laptop
+              </h6>
+              <h4 class="card-text">
+                Razer Blade 15 Studio Edition
+              </h4>
+              <small class=" card-text text-muted">
+                #Gaming#Studio
+              </small>
+              <div class="mt-3 d-flex justify-content-between">
+                <span class="">GHS 159.00</span>
+                <i class="icon--sm text-muted fas fa-cart-plus"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      <?php endforeach ?>
+    </div>
+  </div>
+  <!--card end-->

@@ -6,3 +6,12 @@ body {
     font-size: 1.25rem;
     cursor: pointer;
 }
+
+.icon--sm {
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.card {
+    outline: 0.0625rem solid #eeeeee;
+}

@@ -10,5 +10,5 @@ define("DB_ENGINE", 'mysql');
 define("DB_HOST", "localhost:3307");
 define("DB_USER", "root");
 define("DB_PASS", "password");
-define("DB_NAME", "learnphp");
+define("DB_NAME", "shop");
 define("DB_CHARSET", 'utf8');
