@@ -5,7 +5,8 @@
   "main": "public/index.php",
   "scripts": {
     "start": "npx nodemon --exec php -c . -S localhost:2000 -t public",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "npx browser-sync start --config bs-config.js",
+    "test": "exit 0"
   },
   "keywords": [
     "PHP"
@@ -13,6 +14,7 @@
   "author": "Emmanuel Adu Gyamfi",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.26.7",
     "nodemon": "^2.0.1"
   },
   "dependencies": {},
