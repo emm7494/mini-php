@@ -10,8 +10,17 @@ body {
 .icon--sm {
     font-size: 1.25rem;
     cursor: pointer;
+    color: #999999 !important;
 }
 
 .card {
     outline: 0.0625rem solid #eeeeee;
+}
+
+.card:hover {
+    outline: 0.0625rem solid #cccccc;
+}
+
+.btn-add-to-cart:hover {
+    color: #555555 !important;
 }

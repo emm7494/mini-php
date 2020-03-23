@@ -92,7 +92,7 @@
               </small>
               <div class="mt-3 d-flex justify-content-between">
                 <span class="">GHS <?php echo $record_fields['price'] ?></span>
-                <i class="icon--sm text-muted fas fa-cart-plus"></i>
+                <i data-product-id=<?php echo $record_fields['id'] ?> class="btn-add-to-cart icon--sm text-muted fas fa-cart-plus"></i>
               </div>
             </div>
           </div>
@@ -103,32 +103,5 @@
   <!--card end-->
 </main>
 
-<?php $sql = "SELECT * FROM `products` WHERE 1";
-$result = $conn->query($sql);
-?>
-<ul>
-  <?php while ($record_fields = $result->fetch(PDO::FETCH_ASSOC)) : ?>
-    <li>
-      <?php echo $record_fields['id'] ?>
-      <?php echo $record_fields['name'] ?>
-      <?php echo $record_fields['category'] ?>
-      <?php echo $record_fields['quantity'] ?>
-      <?php echo $record_fields['price'] ?>
-      <?php echo $record_fields['created'] ?>
-      <?php echo $record_fields['image'] ?>
-      <?php echo $record_fields['modified'] ?>
-    </li>-|-
-  <?php endwhile ?>
-</ul>
-<?php
-$myObj = new stdClass();
-$myObj->name = "John";
-$myObj->age = 30;
-$myObj->city = "New York";
-
-$myJSON = json_encode($myObj);
-
-echo $myJSON;
-?>
 <?php $data['main_content'] = ob_get_clean(); ?>
 <?php require '../templates/base.php'; ?>

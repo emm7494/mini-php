@@ -37,3 +37,13 @@ function get_cart_json()
 {
     require_once '../api/get_cart_json.php';
 }
+
+function set_cart_json()
+{
+    require_once '../api/set_cart_json.php';
+}
+
+function del_cart_json()
+{
+    require_once '../api/del_cart_json.php';
+}

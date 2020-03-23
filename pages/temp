@@ -28,3 +28,31 @@
     </div>
   </div>
   <!--card end-->
+
+<?php $sql = "SELECT * FROM `products` WHERE 1";
+$result = $conn->query($sql);
+?>
+<ul>
+  <?php while ($record_fields = $result->fetch(PDO::FETCH_ASSOC)) : ?>
+    <li>
+      <?php echo $record_fields['id'] ?>
+      <?php echo $record_fields['name'] ?>
+      <?php echo $record_fields['category'] ?>
+      <?php echo $record_fields['quantity'] ?>
+      <?php echo $record_fields['price'] ?>
+      <?php echo $record_fields['created'] ?>
+      <?php echo $record_fields['image'] ?>
+      <?php echo $record_fields['modified'] ?>
+    </li>-|-
+  <?php endwhile ?>
+</ul>
+<?php
+$myObj = new stdClass();
+$myObj->name = "John";
+$myObj->age = 30;
+$myObj->city = "New York";
+
+$myJSON = json_encode($myObj);
+
+echo $myJSON;
+?>

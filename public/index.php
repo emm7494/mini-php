@@ -14,8 +14,12 @@ if (in_array($uri, array('/', '/index', '/home'))) {
     render_about();
 } elseif ('/contact' === $uri) {
     render_contact();
-} elseif ('/api/cart' === $uri) {
+} elseif ('/api/get_cart_json' === $uri) {
     get_cart_json();
+} elseif ('/api/set_cart_json' === $uri) {
+    set_cart_json();
+} elseif ('/api/del_cart_json' === $uri) {
+    del_cart_json();
 } else {
     header('HTTP/1.1 404 Not Found');
     render_404();

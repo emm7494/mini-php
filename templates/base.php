@@ -8,7 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/static/vendor/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="/static/vendor/bootstrap/dist/css/bootstrap.min.css">
-    <link href="/static/css/carousel.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/style.css">
     <title><?= $data['title'] ?></title>
     <style>
@@ -155,7 +154,7 @@
                 </ul>
             </div>
             <div class="col-6 col-md">
-                <h5>Employment</h5>
+                <h5>Careers</h5>
                 <ul class="list-unstyled text-small">
                     <li>
                         <a class="text-muted" href="#">Hiring</a>
