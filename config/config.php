@@ -7,7 +7,7 @@ ini_set('xmlrpc_errors', 'On');
 putenv('mouse=99');
 
 define("DB_ENGINE", 'mysql');
-define("DB_HOST", "localhost:3307");
+define("DB_HOST", "localhost:3306");
 define("DB_USER", "root");
 define("DB_PASS", "password");
 define("DB_NAME", "shop");

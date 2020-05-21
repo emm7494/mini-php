@@ -4,7 +4,7 @@
   "description": "A flat PHP MVC setup.",
   "main": "public/index.php",
   "scripts": {
-    "start": "npx nodemon --exec php -c . -S localhost:2000 -t public",
+    "start": "npx nodemon --exec php -S localhost:2000 -t public",
     "watch": "npx browser-sync start --config bs-config.js",
     "test": "exit 0"
   },
