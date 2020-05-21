@@ -45,7 +45,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `category`, `price`, `quantity`, `image`, `tags`, `created`) VALUES
-(1, 'Nokia 3310', 'Feature phone', 110.99, 18, 'Nokia_3310.jpeg', '#Discount#LongBatteryLife', '2020-08-02 12:04:03'),
+(1, 'Nokia 3310', 'Feature phone', 110.99, 18, 'Nokia 3310.jpeg', '#Discount#LongBatteryLife', '2020-08-02 12:04:03'),
 (2, 'Beats', 'Headphone', 950.99, 6, 'Beats.jpeg', '#Discount', '2020-08-02 12:14:29'),
 (3, 'Nokia 8 Sirocco', 'Smartphone', 1200.99, 12, 'Nokia 8 Sirocco.jpeg', '#Featured#BestSelling', '2020-08-02 12:15:04'),
 (4, 'Samsung Galaxy s8', 'Smartphone', 1250.99, 14, 'Samsung Galaxy s8.jpeg', '#Featured#Discount', '2020-02-01 12:16:08'),
